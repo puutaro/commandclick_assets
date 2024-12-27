@@ -104,7 +104,7 @@ do
 	cd "${temp_gz_working_dir_path}"
 	echo "### $(cur_date) tar ${file_name}.."
 	tar \
-		-cvpzf "${TAR_GZ_DIR_PATH}/${file_name}.tar.gz" \
+		-cvpf "${TAR_GZ_DIR_PATH}/${file_name}.tar" \
 		./ &
 
 done
