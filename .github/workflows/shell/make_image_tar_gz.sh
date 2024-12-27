@@ -7,12 +7,12 @@ readonly IMAGE_COMPRESS_DIR_NAME="image_compress"
 readonly IMAGE_COMPRESS_DIR_PATH="${WORKING_DIR_PATH}/${IMAGE_COMPRESS_DIR_NAME}"
 readonly IMAGES_DIR_NAME="images"
 readonly IMAGES_DIR_PATH="${IMAGE_COMPRESS_DIR_PATH}/${IMAGES_DIR_NAME}"
-readonly TAR_GZ_DIR_NAME="tar_gz"
-readonly TAR_GZ_DIR_PATH="${IMAGE_COMPRESS_DIR_PATH}/${TAR_GZ_DIR_NAME}"
-readonly IMAGE_TAR_GZ_LIST_NAME="image_tar_gz_list.txt"
-readonly IMAGE_TAR_GZ_LIST_PATH="${TAR_GZ_DIR_PATH}/${IMAGE_TAR_GZ_LIST_NAME}"
-rm -rf "${TAR_GZ_DIR_PATH}"
-mkdir -p "${TAR_GZ_DIR_PATH}"
+readonly TAR_DIR_NAME="tar"
+readonly TAR_DIR_PATH="${IMAGE_COMPRESS_DIR_PATH}/${TAR_DIR_NAME}"
+readonly IMAGE_TAR_LIST_NAME="image_tar_list.txt"
+readonly IMAGE_TAR_LIST_PATH="${TAR_DIR_PATH}/${IMAGE_TAR_LIST_NAME}"
+rm -rf "${TAR_DIR_PATH}"
+mkdir -p "${TAR_DIR_PATH}"
 readonly TEMP_DIR_NAME="temp"
 readonly TEMP_DIR_PATH="${WORKING_DIR_PATH}/${TEMP_DIR_NAME}"
 rm -rf "${TEMP_DIR_PATH}"
@@ -95,31 +95,31 @@ do
 			printf "%s\n", gensub(/\//, "___", "g", image_dir_relative_path)
 		}' \
 	)
-	temp_gz_working_dir_path="${TEMP_DIR_PATH}/${file_name}"
-	temp_image_bundle_dir_path="${temp_gz_working_dir_path}/${image_dir_relative_path}"
+	temp_working_dir_path="${TEMP_DIR_PATH}/${file_name}"
+	temp_image_bundle_dir_path="${temp_working_dir_path}/${image_dir_relative_path}"
 	mkdir -p "${temp_image_bundle_dir_path}"
 	cp -arvf \
 		"${image_dir_path}"/* \
 		"${temp_image_bundle_dir_path}"
-	cd "${temp_gz_working_dir_path}"
+	cd "${temp_working_dir_path}"
 	echo "### $(cur_date) tar ${file_name}.."
 	tar \
-		-cvpf "${TAR_GZ_DIR_PATH}/${file_name}.tar" \
+		-cvpf "${TAR_DIR_PATH}/${file_name}.tar" \
 		./ &
 
 done
 wait
 rm -rf "${TEMP_DIR_PATH}"
 cd "${WORKING_DIR_PATH}"
-image_bundle_prefix="${IMAGE_COMPRESS_DIR_NAME}/${TAR_GZ_DIR_NAME}"
-find "${TAR_GZ_DIR_PATH}" -mindepth 1 -maxdepth 1 -type f \
+image_bundle_prefix="${IMAGE_COMPRESS_DIR_NAME}/${TAR_DIR_NAME}"
+find "${TAR_DIR_PATH}" -mindepth 1 -maxdepth 1 -type f \
 | awk -v WORKING_DIR_PATH="${WORKING_DIR_PATH}" '{
 	cmd = sprintf("du -b --max-depth=0 \x22%s\x22 | cut -f1 ", $0)
-	cmd | getline tar_gz_size
+	cmd | getline tar_size
 	close(cmd)
 	WORKING_DIR_PATH_PREFIX_REGEX = sprintf("^%s/", WORKING_DIR_PATH)
 	relativeDirPath = gensub(WORKING_DIR_PATH_PREFIX_REGEX, "", "1", $0)
-   	printf "relativeDirPath=%s,size=%s\n", relativeDirPath, tar_gz_size
-}' > "${IMAGE_TAR_GZ_LIST_PATH}"
+   	printf "relativeDirPath=%s,size=%s\n", relativeDirPath, tar_size
+}' > "${IMAGE_TAR_LIST_PATH}"
 
 
