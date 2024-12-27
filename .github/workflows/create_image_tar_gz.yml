@@ -1,0 +1,19 @@
+name: update fannel repository
+on: 
+  workflow_dispatch:
+  schedule:
+    - cron: '20 20 * * *'
+jobs:
+  update-fannel-repo:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # 書き込むために必要
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: create image tar gz
+        run: |
+          bash ".github/workflows/shell/make_image_tar_gz.sh"
+      - name: Auto Commit
+        uses: stefanzweifel/git-auto-commit-action@v5
+
