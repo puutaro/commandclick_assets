@@ -117,13 +117,14 @@ find "${TAR_DIR_PATH}" -mindepth 1 -maxdepth 1 -type f \
 | awk -v WORKING_DIR_PATH="${WORKING_DIR_PATH}" '{
 	if($0 !~ /\.tar$/) next
 	fileName = gensub(/.*\//, "", "1", $0)
-	fileName = gensub(/\.tar/, "", "1", fileName)
-	relativeDirPath = gensub(/'${PATH_SEPARATOR}'/, "/", "g", fileName)
+	fileRawName = gensub(/\.tar/, "", "1", fileName)
+	relativeDirPath = gensub(/'${PATH_SEPARATOR}'/, "/", "g", fileRawName)
+	relativeTarPath = sprintf("'${image_bundle_prefix}'/%s", fileName)
 	cmd = sprintf("du -b --max-depth=0 \x22%s\x22 | cut -f1 ", $0)
 	cmd | getline tar_size
 	close(cmd)
 	WORKING_DIR_PATH_PREFIX_REGEX = sprintf("^%s/", WORKING_DIR_PATH)
-   	printf "relativeDirPath=%s,size=%s\n", relativeDirPath, tar_size
+   	printf "relativeDirPath=%s,relativeTarPath=%s,size=%s\n", relativeDirPath, relativeTarPath, tar_size
 }' > "${IMAGE_TAR_LIST_PATH}"
 
 
