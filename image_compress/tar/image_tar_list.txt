@@ -1,10 +1,10 @@
-relativeDirPath=fannel_bk/SCENE,relativeTarPath=image_compress/tar/fannel_bk___SCENE.tar,size=1443840
+relativeDirPath=fannel_bk/CITY,relativeTarPath=image_compress/tar/fannel_bk___CITY.tar,size=808960
+relativeDirPath=fannel_bk/HORROR,relativeTarPath=image_compress/tar/fannel_bk___HORROR.tar,size=399360
+relativeDirPath=fannel_bk/BUILDING,relativeTarPath=image_compress/tar/fannel_bk___BUILDING.tar,size=1413120
+relativeDirPath=fannel_bk/ANIMAL,relativeTarPath=image_compress/tar/fannel_bk___ANIMAL.tar,size=1843200
 relativeDirPath=fannel_bk/MACHINE,relativeTarPath=image_compress/tar/fannel_bk___MACHINE.tar,size=952320
+relativeDirPath=fannel_bk/SCENE,relativeTarPath=image_compress/tar/fannel_bk___SCENE.tar,size=1443840
+relativeDirPath=fannel_bk/NATURE,relativeTarPath=image_compress/tar/fannel_bk___NATURE.tar,size=1034240
+relativeDirPath=fannel_bk/PERSON,relativeTarPath=image_compress/tar/fannel_bk___PERSON.tar,size=317440
 relativeDirPath=fannel_bk/WIDE_NATURE,relativeTarPath=image_compress/tar/fannel_bk___WIDE_NATURE.tar,size=2611200
 relativeDirPath=ubuntu/setup_alert,relativeTarPath=image_compress/tar/ubuntu___setup_alert.tar,size=972800
-relativeDirPath=fannel_bk/CITY,relativeTarPath=image_compress/tar/fannel_bk___CITY.tar,size=808960
-relativeDirPath=fannel_bk/PERSON,relativeTarPath=image_compress/tar/fannel_bk___PERSON.tar,size=317440
-relativeDirPath=fannel_bk/ANIMAL,relativeTarPath=image_compress/tar/fannel_bk___ANIMAL.tar,size=1843200
-relativeDirPath=fannel_bk/HORROR,relativeTarPath=image_compress/tar/fannel_bk___HORROR.tar,size=399360
-relativeDirPath=fannel_bk/NATURE,relativeTarPath=image_compress/tar/fannel_bk___NATURE.tar,size=1034240
-relativeDirPath=fannel_bk/BUILDING,relativeTarPath=image_compress/tar/fannel_bk___BUILDING.tar,size=1413120
