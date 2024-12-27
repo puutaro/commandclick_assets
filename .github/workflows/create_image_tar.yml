@@ -1,4 +1,4 @@
-name: Create image tar gz
+name: Create image tar
 on: 
   workflow_dispatch:
   schedule:
@@ -11,9 +11,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: create image tar gz
+      - name: create image tar
         run: |
-          bash ".github/workflows/shell/make_image_tar_gz.sh"
+          bash ".github/workflows/shell/make_image_tar.sh"
       - name: Auto Commit
         uses: stefanzweifel/git-auto-commit-action@v5
 
