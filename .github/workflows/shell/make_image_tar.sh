@@ -13,6 +13,7 @@ readonly IMAGE_TAR_LIST_NAME="image_tar_list.txt"
 readonly IMAGE_TAR_LIST_PATH="${TAR_DIR_PATH}/${IMAGE_TAR_LIST_NAME}"
 rm -rf "${TAR_DIR_PATH}"
 mkdir -p "${TAR_DIR_PATH}"
+readonly PATH_SEPARATOR="___"
 readonly TEMP_DIR_NAME="temp"
 readonly TEMP_DIR_PATH="${WORKING_DIR_PATH}/${TEMP_DIR_NAME}"
 rm -rf "${TEMP_DIR_PATH}"
@@ -86,7 +87,7 @@ do
 			print gensub(IMAGES_DIR_PATH_PREFIX_REGEX, "", "1", $0)
 		}' \
 	)
-	image_bundle_dir_path="${image_dir_relative_path//\//___}"
+	image_bundle_dir_path="${image_dir_relative_path//\//${PATH_SEPARATOR}}"
 	file_name=$(\
 		echo "${image_dir_path}" \
 		| awk -v IMAGES_DIR_PATH="${IMAGES_DIR_PATH}" '{
@@ -114,11 +115,14 @@ cd "${WORKING_DIR_PATH}"
 image_bundle_prefix="${IMAGE_COMPRESS_DIR_NAME}/${TAR_DIR_NAME}"
 find "${TAR_DIR_PATH}" -mindepth 1 -maxdepth 1 -type f \
 | awk -v WORKING_DIR_PATH="${WORKING_DIR_PATH}" '{
+	if($0 !~ /\.tar$/) next
+	fileName = gensub(/.*\//, "", "1", $0)
+	fileName = gensub(/\.tar/, "", "1", fileName)
+	relativeDirPath = gensub(/'${PATH_SEPARATOR}'/, "/", "g", fileName)
 	cmd = sprintf("du -b --max-depth=0 \x22%s\x22 | cut -f1 ", $0)
 	cmd | getline tar_size
 	close(cmd)
 	WORKING_DIR_PATH_PREFIX_REGEX = sprintf("^%s/", WORKING_DIR_PATH)
-	relativeDirPath = gensub(WORKING_DIR_PATH_PREFIX_REGEX, "", "1", $0)
    	printf "relativeDirPath=%s,size=%s\n", relativeDirPath, tar_size
 }' > "${IMAGE_TAR_LIST_PATH}"
 
