@@ -1,10 +1,10 @@
-relativeDirPath=fannel_bk/SCENE,size=1443840
+relativeDirPath=fannel_bk/CITY,size=808960
+relativeDirPath=fannel_bk/HORROR,size=399360
+relativeDirPath=fannel_bk/BUILDING,size=1413120
+relativeDirPath=fannel_bk/ANIMAL,size=1843200
 relativeDirPath=fannel_bk/MACHINE,size=952320
+relativeDirPath=fannel_bk/SCENE,size=1443840
+relativeDirPath=fannel_bk/NATURE,size=1034240
+relativeDirPath=fannel_bk/PERSON,size=317440
 relativeDirPath=fannel_bk/WIDE_NATURE,size=2611200
 relativeDirPath=ubuntu/setup_alert,size=972800
-relativeDirPath=fannel_bk/CITY,size=808960
-relativeDirPath=fannel_bk/PERSON,size=317440
-relativeDirPath=fannel_bk/ANIMAL,size=1843200
-relativeDirPath=fannel_bk/HORROR,size=399360
-relativeDirPath=fannel_bk/NATURE,size=1034240
-relativeDirPath=fannel_bk/BUILDING,size=1413120
