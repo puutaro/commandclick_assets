@@ -124,7 +124,7 @@ find "${TAR_DIR_PATH}" -mindepth 1 -maxdepth 1 -type f \
 	cmd | getline tar_size
 	close(cmd)
 	WORKING_DIR_PATH_PREFIX_REGEX = sprintf("^%s/", WORKING_DIR_PATH)
-   	printf "relativeDirPath=%s,relativeTarPath=%s,size=%s\n", relativeDirPath, relativeTarPath, tar_size
+	printf "relativeDirPath=%s,relativeTarPath=%s,tarSize=%s\n", relativeDirPath, relativeTarPath, tar_size
 }' > "${IMAGE_TAR_LIST_PATH}"
 
 
