@@ -1,10 +1,10 @@
-relativeDirPath=WALL_DIR/SCENE_DIR,relativeTarPath=image_compress/tar/WALL_DIR___SCENE_DIR.tar,tarSize=1443840
-relativeDirPath=WALL_DIR/HORROR_DIR,relativeTarPath=image_compress/tar/WALL_DIR___HORROR_DIR.tar,tarSize=399360
-relativeDirPath=WALL_DIR/BUILDING_DIR,relativeTarPath=image_compress/tar/WALL_DIR___BUILDING_DIR.tar,tarSize=1413120
-relativeDirPath=WALL_DIR/PERSON_DIR,relativeTarPath=image_compress/tar/WALL_DIR___PERSON_DIR.tar,tarSize=317440
-relativeDirPath=WALL_DIR/NATURE_DIR,relativeTarPath=image_compress/tar/WALL_DIR___NATURE_DIR.tar,tarSize=1034240
 relativeDirPath=WALL_DIR/WIDE_NATURE_DIR,relativeTarPath=image_compress/tar/WALL_DIR___WIDE_NATURE_DIR.tar,tarSize=2611200
-relativeDirPath=WALL_DIR/MACHINE_DIR,relativeTarPath=image_compress/tar/WALL_DIR___MACHINE_DIR.tar,tarSize=952320
+relativeDirPath=WALL_DIR/NATURE_DIR,relativeTarPath=image_compress/tar/WALL_DIR___NATURE_DIR.tar,tarSize=1034240
+relativeDirPath=WALL_DIR/SCENE_DIR,relativeTarPath=image_compress/tar/WALL_DIR___SCENE_DIR.tar,tarSize=1443840
 relativeDirPath=WALL_DIR/ANIMAL_DIR,relativeTarPath=image_compress/tar/WALL_DIR___ANIMAL_DIR.tar,tarSize=1843200
 relativeDirPath=WALL_DIR/CITY_DIR,relativeTarPath=image_compress/tar/WALL_DIR___CITY_DIR.tar,tarSize=808960
 relativeDirPath=ubuntu/setup_alert,relativeTarPath=image_compress/tar/ubuntu___setup_alert.tar,tarSize=972800
+relativeDirPath=WALL_DIR/PERSON_DIR,relativeTarPath=image_compress/tar/WALL_DIR___PERSON_DIR.tar,tarSize=317440
+relativeDirPath=WALL_DIR/MACHINE_DIR,relativeTarPath=image_compress/tar/WALL_DIR___MACHINE_DIR.tar,tarSize=952320
+relativeDirPath=WALL_DIR/HORROR_DIR,relativeTarPath=image_compress/tar/WALL_DIR___HORROR_DIR.tar,tarSize=399360
+relativeDirPath=WALL_DIR/BUILDING_DIR,relativeTarPath=image_compress/tar/WALL_DIR___BUILDING_DIR.tar,tarSize=1413120
